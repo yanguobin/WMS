@@ -1,0 +1,131 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8"-->
+<!--pageEncoding="UTF-8"%>-->
+
+<script>
+    // 查询参数
+    search_user_id = null
+    search_start_date = null
+    search_end_date = null
+
+    $(function(){
+        datePickerInit();
+        userOperationRecordTableInit();
+        searchActionInit();
+    })
+
+    // 日期选择器初始化
+	function datePickerInit(){
+		$('.form_date').datetimepicker({
+			format:'yyyy-mm-dd',
+			language : 'zh-CN',
+			endDate : new Date(),
+			weekStart : 1,
+			todayBtn : 1,
+			autoClose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			forceParse : 0,
+			minView:2
+		});
+	}
+
+	// 表格初始化
+	function userOperationRecordTableInit(){
+	    $('#userOperationRecordTable').bootstrapTable({
+	        columns:[{
+	            field : 'id',
+	            title : '记录ID'
+	        },{
+	            field : 'userID',
+	            title : '用户ID'
+	        },{
+	            field : 'userName',
+	            title : '用户名'
+	        },{
+	            field : 'operationName',
+	            title : '操作'
+	        },{
+	            field : 'operationTime',
+	            title : '时间'
+	        },{
+	            field : 'operationResult',
+	            title : '操作结果'
+	        }],
+	        url : 'systemLog/getUserOperationRecords',
+	        method : 'GET',
+	        queryParams : queryParams,
+            sidePagination : "server",
+            dataType : 'json',
+            pagination : true,
+            pageNumber : 1,
+            pageSize : 5,
+            pageList : [ 5, 10, 25, 50, 100 ],
+            clickToSelect : true
+	    });
+	}
+
+	// 表格刷新
+	function tableRefresh() {
+		$('#userOperationRecordTable').bootstrapTable('refresh', {
+			query : {}
+		});
+	}
+
+	// 分页查询参数
+	function queryParams(params) {
+		var temp = {
+			limit : params.limit,
+			offset : params.offset,
+			userID : search_user_id,
+			startDate : search_start_date,
+			endDate : search_end_date
+		}
+		return temp;
+	}
+
+    // 查询操作
+    function searchActionInit(){
+        $('#search_button').click(function(){
+            search_user_id = $('#user_id').val();
+            search_start_date = $('#start_date').val();
+            search_end_date = $('#end_date').val();
+            tableRefresh();
+        })
+    }
+</script>
+
+<div class="panel panel-default">
+    <ol class="breadcrumb">
+        <li>系统日志</li>
+    </ol>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                <form action="" class="form-inline">
+                    <div class="form-group">
+                        <label class="form-label">用户ID：</label>
+                        <input type="text" id="user_id" class="form-control" placeholder="指定用户ID" style="width:50%">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <form action="" class="form-inline">
+                    <label class="form-label">日期范围：</label>
+                    <input class="form_date form-control" id="start_date" placeholder="起始日期">
+                    <label class="form-label">&nbsp;&nbsp;-&nbsp;&nbsp;</label>
+                    <input class="form_date form-control" id="end_date" placeholder="结束日期">
+                </form>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-success" id="search_button">
+                    <span class="glyphicon glyphicon-search"></span> <span>查询</span>
+                </button>
+            </div>
+        </div>
+        <div class="row" style="margin-top:25px">
+            <div class="col-md-12">
+                <table class="table table-striped" id="userOperationRecordTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
