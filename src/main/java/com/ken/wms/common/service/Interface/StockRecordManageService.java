@@ -6,8 +6,6 @@ import java.util.Map;
 
 /**
  * 出入库管理
- *
- * @author Ken
  */
 public interface StockRecordManageService {
 

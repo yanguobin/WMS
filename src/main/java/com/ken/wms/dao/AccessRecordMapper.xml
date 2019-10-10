@@ -20,14 +20,14 @@
 
     <select id="selectAccessRecords" resultMap="accessRecordDO">
         select
-            RECORD_ID,
-            USER_ID,
-            USER_NAME,
-            ACCESS_TYPE,
-            ACCESS_TIME,
-            ACCESS_IP
+        RECORD_ID,
+        USER_ID,
+        USER_NAME,
+        ACCESS_TYPE,
+        ACCESS_TIME,
+        ACCESS_IP
         from
-            wms_access_record
+        wms_access_record
         <where>
             <if test="userID != -1">
                 USER_ID = #{userID}

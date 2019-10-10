@@ -14,14 +14,14 @@
 
     <select id="selectUserOperationRecord" resultMap="userOperationRecord">
         select
-            RECORD_ID,
-            USER_ID,
-            USER_NAME,
-            OPERATION_NAME,
-            OPERATION_TIME,
-            OPERATION_RESULT
+        RECORD_ID,
+        USER_ID,
+        USER_NAME,
+        OPERATION_NAME,
+        OPERATION_TIME,
+        OPERATION_RESULT
         from
-            wms_operation_record
+        wms_operation_record
         <where>
             <if test="userID > 0">
                 USER_ID = #{userID}

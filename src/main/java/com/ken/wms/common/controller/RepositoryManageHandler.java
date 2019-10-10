@@ -23,8 +23,6 @@ import java.util.Map;
 
 /**
  * 仓库信息管理请求 Handler
- *
- * @author Ken
  */
 @Controller
 @RequestMapping(value = "/**/repositoryManage")
@@ -177,9 +175,9 @@ public class RepositoryManageHandler {
         Map<String, Object> queryResult = repositoryService.selectById(repositoryID);
         if (queryResult != null) {
             repositoryList = (List<Repository>) queryResult.get("data");
-            if (repositoryList != null && repositoryList.size()>0)
+            if (repositoryList != null && repositoryList.size() > 0)
                 repository = repositoryList.get(0);
-                result = Response.RESPONSE_RESULT_SUCCESS;
+            result = Response.RESPONSE_RESULT_SUCCESS;
         }
 
         // 设置 Response

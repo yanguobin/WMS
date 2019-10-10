@@ -21,8 +21,6 @@ import java.util.Map;
 
 /**
  * 仓库信息管理 service 实现类
- *
- * @author Ken
  */
 @Service
 public class RepositoryManageServiceImpl implements RepositoryService {

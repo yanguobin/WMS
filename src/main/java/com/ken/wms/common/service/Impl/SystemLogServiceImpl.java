@@ -22,9 +22,6 @@ import java.util.*;
 
 /**
  * 系统操作日志 Service 实现
- *
- * @author Ken
- * @since 2017/4/7.
  */
 @Service
 public class SystemLogServiceImpl implements SystemLogService {
@@ -104,10 +101,9 @@ public class SystemLogServiceImpl implements SystemLogService {
         try {
             if (StringUtils.isNotEmpty(startDateStr))
                 startDate = dateFormatSimple.parse(startDateStr);
-            if (StringUtils.isNotEmpty(endDateStr))
-            {
+            if (StringUtils.isNotEmpty(endDateStr)) {
                 endDate = dateFormatSimple.parse(endDateStr);
-                newEndDate = new Date(endDate.getTime()+(24*60*60*1000)-1);
+                newEndDate = new Date(endDate.getTime() + (24 * 60 * 60 * 1000) - 1);
             }
         } catch (ParseException e) {
             throw new SystemLogServiceException(e, "Fail to convert string to Date Object");
@@ -220,10 +216,9 @@ public class SystemLogServiceImpl implements SystemLogService {
         try {
             if (StringUtils.isNotEmpty(startDateStr))
                 startDate = dateFormatSimple.parse(startDateStr);
-            if (StringUtils.isNotEmpty(endDateStr))
-            {
+            if (StringUtils.isNotEmpty(endDateStr)) {
                 endDate = dateFormatSimple.parse(endDateStr);
-                newEndDate = new Date(endDate.getTime()+(24*60*60*1000)-1);
+                newEndDate = new Date(endDate.getTime() + (24 * 60 * 60 * 1000) - 1);
             }
         } catch (ParseException e) {
             throw new SystemLogServiceException(e, "Fail to convert String format date to Date Object");

@@ -2,9 +2,6 @@ package com.ken.wms.domain;
 
 /**
  * 用户操作记录DTO
- *
- * @author Ken
- * @since 2017/4/9.
  */
 public class UserOperationRecordDTO {
 

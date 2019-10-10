@@ -7,10 +7,10 @@
 
     <select id="getRoleID" resultType="java.lang.Integer">
         select
-            ROLE_ID
+        ROLE_ID
         from
-            wms_roles
+        wms_roles
         where
-            ROLE_NAME = #{roleName}
+        ROLE_NAME = #{roleName}
     </select>
 </mapper>

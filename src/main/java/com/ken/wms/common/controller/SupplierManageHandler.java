@@ -21,8 +21,6 @@ import java.util.Map;
 
 /**
  * 供应商信息管理请求 Handler
- *
- * @author Ken
  */
 @RequestMapping(value = "/**/supplierManage")
 @Controller
@@ -146,9 +144,9 @@ public class SupplierManageHandler {
         Map<String, Object> queryResult = supplierManageService.selectById(supplierID);
         if (queryResult != null) {
             supplierList = (List<Supplier>) queryResult.get("data");
-            if (supplierList != null && supplierList.size()>0)
+            if (supplierList != null && supplierList.size() > 0)
                 supplier = supplierList.get(0);
-                result = Response.RESPONSE_RESULT_SUCCESS;
+            result = Response.RESPONSE_RESULT_SUCCESS;
         }
 
         // 设置 Response

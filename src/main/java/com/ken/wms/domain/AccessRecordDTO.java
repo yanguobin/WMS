@@ -2,9 +2,6 @@ package com.ken.wms.domain;
 
 /**
  * 登入登出记录DTO
- *
- * @author Ken
- * @since 2017/4/8.
  */
 public class AccessRecordDTO {
 

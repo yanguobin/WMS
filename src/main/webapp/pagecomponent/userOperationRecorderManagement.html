@@ -7,85 +7,85 @@
     search_start_date = null
     search_end_date = null
 
-    $(function(){
+    $(function () {
         datePickerInit();
         userOperationRecordTableInit();
         searchActionInit();
     })
 
     // 日期选择器初始化
-	function datePickerInit(){
-		$('.form_date').datetimepicker({
-			format:'yyyy-mm-dd',
-			language : 'zh-CN',
-			endDate : new Date(),
-			weekStart : 1,
-			todayBtn : 1,
-			autoClose : 1,
-			todayHighlight : 1,
-			startView : 2,
-			forceParse : 0,
-			minView:2
-		});
-	}
+    function datePickerInit() {
+        $('.form_date').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+            endDate: new Date(),
+            weekStart: 1,
+            todayBtn: 1,
+            autoClose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            minView: 2
+        });
+    }
 
-	// 表格初始化
-	function userOperationRecordTableInit(){
-	    $('#userOperationRecordTable').bootstrapTable({
-	        columns:[{
-	            field : 'id',
-	            title : '记录ID'
-	        },{
-	            field : 'userID',
-	            title : '用户ID'
-	        },{
-	            field : 'userName',
-	            title : '用户名'
-	        },{
-	            field : 'operationName',
-	            title : '操作'
-	        },{
-	            field : 'operationTime',
-	            title : '时间'
-	        },{
-	            field : 'operationResult',
-	            title : '操作结果'
-	        }],
-	        url : 'systemLog/getUserOperationRecords',
-	        method : 'GET',
-	        queryParams : queryParams,
-            sidePagination : "server",
-            dataType : 'json',
-            pagination : true,
-            pageNumber : 1,
-            pageSize : 5,
-            pageList : [ 5, 10, 25, 50, 100 ],
-            clickToSelect : true
-	    });
-	}
+    // 表格初始化
+    function userOperationRecordTableInit() {
+        $('#userOperationRecordTable').bootstrapTable({
+            columns: [{
+                field: 'id',
+                title: '记录ID'
+            }, {
+                field: 'userID',
+                title: '用户ID'
+            }, {
+                field: 'userName',
+                title: '用户名'
+            }, {
+                field: 'operationName',
+                title: '操作'
+            }, {
+                field: 'operationTime',
+                title: '时间'
+            }, {
+                field: 'operationResult',
+                title: '操作结果'
+            }],
+            url: 'systemLog/getUserOperationRecords',
+            method: 'GET',
+            queryParams: queryParams,
+            sidePagination: "server",
+            dataType: 'json',
+            pagination: true,
+            pageNumber: 1,
+            pageSize: 5,
+            pageList: [5, 10, 25, 50, 100],
+            clickToSelect: true
+        });
+    }
 
-	// 表格刷新
-	function tableRefresh() {
-		$('#userOperationRecordTable').bootstrapTable('refresh', {
-			query : {}
-		});
-	}
+    // 表格刷新
+    function tableRefresh() {
+        $('#userOperationRecordTable').bootstrapTable('refresh', {
+            query: {}
+        });
+    }
 
-	// 分页查询参数
-	function queryParams(params) {
-		var temp = {
-			limit : params.limit,
-			offset : params.offset,
-			userID : search_user_id,
-			startDate : search_start_date,
-			endDate : search_end_date
-		}
-		return temp;
-	}
+    // 分页查询参数
+    function queryParams(params) {
+        var temp = {
+            limit: params.limit,
+            offset: params.offset,
+            userID: search_user_id,
+            startDate: search_start_date,
+            endDate: search_end_date
+        }
+        return temp;
+    }
 
     // 查询操作
-    function searchActionInit(){
-        $('#search_button').click(function(){
+    function searchActionInit() {
+        $('#search_button').click(function () {
             search_user_id = $('#user_id').val();
             search_start_date = $('#start_date').val();
             search_end_date = $('#end_date').val();

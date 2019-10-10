@@ -20,9 +20,6 @@ import java.util.Map;
 
 /**
  * 系统操作日志请求 Handler
- *
- * @author Ken
- * @since 2017/4/7.
  */
 @Controller
 @RequestMapping(value = "/systemLog")

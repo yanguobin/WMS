@@ -30,9 +30,6 @@ import java.util.Map;
 
 /**
  * 用户账户请求 Handler
- *
- * @author Ken
- * @since 017/2/26.
  */
 @Controller
 @RequestMapping("/account")
@@ -75,12 +72,12 @@ public class AccountHandler {
         // 判断用户是否已经登陆
         if (currentUser != null && !currentUser.isAuthenticated()) {
             String id = (String) user.get(USER_ID);
-            String password = (String) user.get(USER_PASSWORD);//123456 724be7906b1f10f8b6df7fa1f0397f77
+            String password = (String) user.get(USER_PASSWORD);
             UsernamePasswordToken token = new UsernamePasswordToken(id, password);
 
-//            System.out.println(id);
-//            System.out.println(password);
-//            System.out.println(token);
+            System.out.println(id);
+            System.out.println(password);
+            System.out.println(token);
 
             // 执行登陆操作
             try {

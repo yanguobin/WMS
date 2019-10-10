@@ -26,9 +26,6 @@ import java.util.Set;
 
 /**
  * 用户的认证与授权
- *
- * @author ken
- * @since 2017/2/26.
  */
 public class UserAuthorizingRealm extends AuthorizingRealm {
 
@@ -79,11 +76,11 @@ public class UserAuthorizingRealm extends AuthorizingRealm {
      * @param authenticationToken 用户凭证
      * @return 返回用户的认证信息
      * @throws AuthenticationException 用户认证异常信息
-     * Realm的认证方法，自动将token传入，比较token与数据库的数据是否匹配
-     * 验证逻辑是先根据用户名查询用户，
-     * 如果查询到的话再将查询到的用户名和密码放到SimpleAuthenticationInfo对象中，
-     * Shiro会自动根据用户输入的密码和查询到的密码进行匹配，如果匹配不上就会抛出异常，
-     * 匹配上之后就会执行doGetAuthorizationInfo()进行相应的权限验证。
+     *                                 Realm的认证方法，自动将token传入，比较token与数据库的数据是否匹配
+     *                                 验证逻辑是先根据用户名查询用户，
+     *                                 如果查询到的话再将查询到的用户名和密码放到SimpleAuthenticationInfo对象中，
+     *                                 Shiro会自动根据用户输入的密码和查询到的密码进行匹配，如果匹配不上就会抛出异常，
+     *                                 匹配上之后就会执行doGetAuthorizationInfo()进行相应的权限验证。
      */
     @SuppressWarnings("unchecked")
     @Override

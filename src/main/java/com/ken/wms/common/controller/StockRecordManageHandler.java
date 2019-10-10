@@ -22,9 +22,6 @@ import java.util.Map;
 
 /**
  * 商品出入库管理请求Handler
- *
- * @author Ken
- * @since 017/4/5.
  */
 @Controller
 @RequestMapping(value = "stockRecordManage")
@@ -110,11 +107,11 @@ public class StockRecordManageHandler {
     @RequestMapping(value = "searchStockRecord", method = RequestMethod.GET)
     public @ResponseBody
     Map<String, Object> getStockRecord(@RequestParam("searchType") String searchType,
-                                          @RequestParam("repositoryID") String repositoryIDStr,
-                                          @RequestParam("startDate") String startDateStr,
-                                          @RequestParam("endDate") String endDateStr,
-                                          @RequestParam("limit") int limit,
-                                          @RequestParam("offset") int offset) throws ParseException, StockRecordManageServiceException {
+                                       @RequestParam("repositoryID") String repositoryIDStr,
+                                       @RequestParam("startDate") String startDateStr,
+                                       @RequestParam("endDate") String endDateStr,
+                                       @RequestParam("limit") int limit,
+                                       @RequestParam("offset") int offset) throws ParseException, StockRecordManageServiceException {
         // 初始化 Response
         Response responseContent = responseUtil.newResponseInstance();
         List<StockRecordDTO> rows = null;

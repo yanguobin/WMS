@@ -22,8 +22,6 @@ import java.util.Map;
 
 /**
  * 货物信息管理请求 Handler
- *
- * @author Ken
  */
 @RequestMapping(value = "/**/goodsManage")
 @Controller
@@ -147,7 +145,7 @@ public class GoodsManageHandler {
         Map<String, Object> queryResult = goodsManageService.selectById(goodsID);
         if (queryResult != null) {
             goodsList = (List<Goods>) queryResult.get("data");
-            if (goodsList != null && goodsList.size()>0) {
+            if (goodsList != null && goodsList.size() > 0) {
                 goods = goodsList.get(0);
                 result = Response.RESPONSE_RESULT_SUCCESS;
             }

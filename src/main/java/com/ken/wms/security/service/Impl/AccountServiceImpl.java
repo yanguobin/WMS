@@ -15,9 +15,6 @@ import java.util.Map;
 
 /**
  * 账户Service
- *
- * @author Ken
- * @since 2017-3-1
  */
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -63,7 +60,7 @@ public class AccountServiceImpl implements AccountService {
             // 原密码正确性验证
             String password;
             password = encryptingModel.MD5(oldPassword + userID);
-            if (!password.equals(user.getPassword())){
+            if (!password.equals(user.getPassword())) {
                 throw new UserAccountServiceException(UserAccountServiceException.PASSWORD_ERROR);
             }
 

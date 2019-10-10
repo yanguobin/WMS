@@ -22,8 +22,6 @@ import java.util.Map;
 
 /**
  * 仓库管理员管理请求 Handler
- *
- * @author Ken
  */
 @Controller
 @RequestMapping(value = "/**/repositoryAdminManage")
@@ -155,9 +153,9 @@ public class RepositoryAdminManageHandler {
         Map<String, Object> queryResult = repositoryAdminManageService.selectByID(repositoryAdminID);
         if (queryResult != null) {
             repositoryAdminList = (List<RepositoryAdmin>) queryResult.get("data");
-            if (repositoryAdminList != null && repositoryAdminList.size()>0)
+            if (repositoryAdminList != null && repositoryAdminList.size() > 0)
                 repositoryAdmin = repositoryAdminList.get(0);
-                result = Response.RESPONSE_RESULT_SUCCESS;
+            result = Response.RESPONSE_RESULT_SUCCESS;
         }
 
         // 设置 Response

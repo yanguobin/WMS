@@ -2,9 +2,6 @@ package com.ken.wms.domain;
 
 /**
  * URL 的角色角色权限信息
- *
- * @author ken
- * @since 2017/2/26
  */
 public class RolePermissionDO {
 

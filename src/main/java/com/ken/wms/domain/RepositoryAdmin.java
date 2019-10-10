@@ -4,80 +4,78 @@ import java.sql.Date;
 
 /**
  * 仓库管理员信息
- * @author Ken
- *
  */
 public class RepositoryAdmin {
 
-	private Integer id;// 仓库管理员ID
-	private String name;// 姓名
-	private String sex;// 性别
-	private String tel;// 联系电话
-	private String address;// 地址
-	private Date birth;// 出生日期
-	private Integer repositoryBelongID;// 所属仓库ID
+    private Integer id;// 仓库管理员ID
+    private String name;// 姓名
+    private String sex;// 性别
+    private String tel;// 联系电话
+    private String address;// 地址
+    private Date birth;// 出生日期
+    private Integer repositoryBelongID;// 所属仓库ID
 
-	
-	public Integer getRepositoryBelongID() {
-		return repositoryBelongID;
-	}
 
-	public void setRepositoryBelongID(Integer repositoryBelongID) {
-		this.repositoryBelongID = repositoryBelongID;
-	}
+    public Integer getRepositoryBelongID() {
+        return repositoryBelongID;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public void setRepositoryBelongID(Integer repositoryBelongID) {
+        this.repositoryBelongID = repositoryBelongID;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getSex() {
-		return sex;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
+    public String getSex() {
+        return sex;
+    }
 
-	public String getTel() {
-		return tel;
-	}
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+    public String getTel() {
+        return tel;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public Date getBirth() {
-		return birth;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setBirth(Date birth) {
-		this.birth = birth;
-	}
+    public Date getBirth() {
+        return birth;
+    }
 
-	@Override
-	public String toString() {
-		return "RepositoryAdmin [id=" + id + ", name=" + name + ", sex=" + sex + ", tel=" + tel + ", address=" + address
-				+ ", birth=" + birth + ", repositoryBelongID=" + repositoryBelongID + "]";
-	}
+    public void setBirth(Date birth) {
+        this.birth = birth;
+    }
+
+    @Override
+    public String toString() {
+        return "RepositoryAdmin [id=" + id + ", name=" + name + ", sex=" + sex + ", tel=" + tel + ", address=" + address
+                + ", birth=" + birth + ", repositoryBelongID=" + repositoryBelongID + "]";
+    }
 
 }

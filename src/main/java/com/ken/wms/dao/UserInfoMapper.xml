@@ -13,13 +13,13 @@
 
     <select id="selectByUserID" resultMap="user">
         select
-            u.USER_ID,
-            u.USER_USERNAME,
-            u.USER_PASSWORD
+        u.USER_ID,
+        u.USER_USERNAME,
+        u.USER_PASSWORD
         from
-            wms_user u
+        wms_user u
         where
-            u.USER_ID = #{userID}
+        u.USER_ID = #{userID}
     </select>
 
     <select id="selectByName" resultMap="user">

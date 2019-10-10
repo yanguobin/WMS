@@ -172,10 +172,9 @@ public class StockRecordManageServiceImpl implements StockRecordManageService {
         try {
             if (StringUtils.isNotEmpty(startDateStr))
                 startDate = dateFormat.parse(startDateStr);
-            if (StringUtils.isNotEmpty(endDateStr))
-            {
+            if (StringUtils.isNotEmpty(endDateStr)) {
                 endDate = dateFormat.parse(endDateStr);
-                newEndDate = new Date(endDate.getTime()+(24*60*60*1000)-1);
+                newEndDate = new Date(endDate.getTime() + (24 * 60 * 60 * 1000) - 1);
             }
         } catch (ParseException e) {
             throw new StockRecordManageServiceException(e);

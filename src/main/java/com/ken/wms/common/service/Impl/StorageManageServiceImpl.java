@@ -25,8 +25,6 @@ import java.util.Map;
 
 /**
  * 库存信息管理 service 实现类
- *
- * @author Ken
  */
 @Service
 public class StorageManageServiceImpl implements StorageManageService {

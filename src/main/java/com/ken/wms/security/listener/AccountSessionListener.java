@@ -19,12 +19,9 @@ import java.util.Date;
 /**
  * 用户Session监听器
  * 当用户session注销时，记录用户账户登出的时间
- *
- * @author Ken
- * @since 2017/3/4.
  */
 @Component
-public class AccountSessionListener implements HttpSessionListener, ApplicationContextAware{
+public class AccountSessionListener implements HttpSessionListener, ApplicationContextAware {
 
     @Autowired
     private SystemLogService systemLogService;
@@ -56,9 +53,9 @@ public class AccountSessionListener implements HttpSessionListener, ApplicationC
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        if (applicationContext instanceof WebApplicationContext){
-            ((WebApplicationContext)applicationContext).getServletContext().addListener(this);
-        }else{
+        if (applicationContext instanceof WebApplicationContext) {
+            ((WebApplicationContext) applicationContext).getServletContext().addListener(this);
+        } else {
             throw new RuntimeException();
         }
     }

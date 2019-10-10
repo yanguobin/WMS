@@ -2,8 +2,6 @@ package com.ken.wms.domain;
 
 /**
  * 用户账户信息(数据传输对象)
- * @author ken
- * @since 2017/2/26.
  */
 public class UserInfoDO {
 

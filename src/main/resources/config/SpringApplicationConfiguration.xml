@@ -143,11 +143,12 @@
         <aop:aspect id="serviceLoggingAspect" ref="serviceLogging" order="100">
             <aop:before method="loggingMethodInvoked" pointcut-ref="serviceMethodLoggingPointcut"/>
             <aop:after-throwing method="loggingServiceException" pointcut-ref="serviceMethodLoggingPointcut"
-            throwing="throwable"/>
+                                throwing="throwable"/>
         </aop:aspect>
     </aop:config>
     <aop:config>
-        <aop:pointcut expression="execution(* com.ken.wms.common.service.Impl.*.*(..)) and @annotation(userOperation)" id="userOperationLoggingPointcut"/>
+        <aop:pointcut expression="execution(* com.ken.wms.common.service.Impl.*.*(..)) and @annotation(userOperation)"
+                      id="userOperationLoggingPointcut"/>
         <aop:aspect id="userOperationLoggingAspect" ref="userOperationLogging" order="20">
             <aop:after-returning method="loggingUserOperation" pointcut-ref="userOperationLoggingPointcut"
                                  returning="returnValue"/>

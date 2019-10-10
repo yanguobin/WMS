@@ -24,8 +24,6 @@ import java.util.Map;
 
 /**
  * 客户信息管理 service 实现类
- *
- * @author Ken
  */
 @Service
 public class CustomerManageServiceImpl implements CustomerManageService {

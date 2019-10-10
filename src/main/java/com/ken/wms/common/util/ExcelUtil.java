@@ -18,7 +18,7 @@ import java.text.DecimalFormat;
 import java.util.*;
 
 /**
- * @author Ken
+ *
  */
 public class ExcelUtil {
 
@@ -58,9 +58,9 @@ public class ExcelUtil {
             return;
         }
 
-		/*
+        /*
          * 扫描 XMl 并配置参数
-		 */
+         */
         // 扫描 entity 节点
         List<Object> entities = xmlConfig.getList("entity[@class]");
         if (entities == null) {

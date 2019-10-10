@@ -7,9 +7,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Service层日志处理
- *
- * @author Ken
- * @since 2017/3/8.
  */
 public class ServiceLogging {
 

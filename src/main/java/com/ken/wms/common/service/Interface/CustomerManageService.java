@@ -11,8 +11,6 @@ import java.util.Map;
 
 /**
  * 客户信息管理 service
- *
- * @author Ken
  */
 public interface CustomerManageService {
 

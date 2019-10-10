@@ -13,11 +13,11 @@
 
     <select id="selectAll" resultMap="rolePermission">
         select
-            ACTION_NAME, ACTION_PARAM, ROLE_NAME
+        ACTION_NAME, ACTION_PARAM, ROLE_NAME
         from
-            wms_roles r, wms_action a, wms_role_action ra
+        wms_roles r, wms_action a, wms_role_action ra
         where
-            r.ROLE_ID = ra.ROLE_ID and
-            a.ACTION_ID = ra.ACTION_ID
+        r.ROLE_ID = ra.ROLE_ID and
+        a.ACTION_ID = ra.ACTION_ID
     </select>
 </mapper>

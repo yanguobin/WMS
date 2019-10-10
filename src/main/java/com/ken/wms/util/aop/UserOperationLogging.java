@@ -10,9 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 用户操作日志记录
- *
- * @author Ken
- * @since 2017/4/8.
  */
 public class UserOperationLogging {
 
@@ -24,7 +21,7 @@ public class UserOperationLogging {
      *
      * @param joinPoint 切入点信息
      */
-    public void loggingUserOperation(JoinPoint joinPoint, Object returnValue, UserOperation userOperation){
+    public void loggingUserOperation(JoinPoint joinPoint, Object returnValue, UserOperation userOperation) {
 
         if (userOperation != null) {
             // 获取 annotation 的值
@@ -35,7 +32,7 @@ public class UserOperationLogging {
 
             // 获取除 import* export* 外的方法的返回值
             String invokedResult = "-";
-            if (!methodName.matches("^import\\w*") && !methodName.matches("^export\\w*")){
+            if (!methodName.matches("^import\\w*") && !methodName.matches("^export\\w*")) {
                 if (returnValue instanceof Boolean) {
                     boolean result = (boolean) returnValue;
                     invokedResult = result ? "成功" : "失败";
@@ -49,7 +46,7 @@ public class UserOperationLogging {
             String userName = (String) session.getAttribute("userName");
 
             // 插入记录
-            try{
+            try {
                 systemLogService.insertUserOperationRecord(userID, userName, userOperationValue, invokedResult);
             } catch (SystemLogServiceException e) {
                 // do log

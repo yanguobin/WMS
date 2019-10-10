@@ -23,8 +23,6 @@ import java.util.Map;
 
 /**
  * 客户信息管理请求 Handler
- *
- * @author Ken
  */
 @RequestMapping(value = "/**/customerManage")
 @Controller
@@ -147,7 +145,7 @@ public class CustomerManageHandler {
         Map<String, Object> queryResult = query(SEARCH_BY_ID, customerID, -1, -1);
         if (queryResult != null) {
             customers = (List<Customer>) queryResult.get("data");
-            if (customers != null && customers.size()>0) {
+            if (customers != null && customers.size() > 0) {
                 customer = customers.get(0);
                 result = Response.RESPONSE_RESULT_SUCCESS;
             }
